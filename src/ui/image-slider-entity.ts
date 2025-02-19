@@ -62,15 +62,15 @@ export class ImageContentEntity extends LitElement {
 
     @media (max-aspect-ratio: 19/6) {
       .full-screen-image {
-        height: calc(100vh - 40px);
-        width: auto;
+        width: 100%;
+        height: auto;
       }
     }
 
     @media (min-aspect-ratio: 19/6) {
       .full-screen-image {
-        width: 100%;
-        height: auto;
+        height: calc(100vh - 40px);
+        width: auto;
       }
     }
   `;

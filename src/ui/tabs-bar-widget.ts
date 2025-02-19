@@ -10,44 +10,50 @@ export class TabsBarWidget extends LitElement {
   @property({ type: String })
   currentTab: string = '';
 
-  static styles = css`
+static styles = css`
+  .tab-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    overflow-x: auto;
+    background-color: black;
+    color: white;
+    z-index: 1000;
+    padding: 0 5px;
+  }
+  .btn {
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: font-size 0.2s ease;
+  }
+  .tab-bar button:hover {
+    background-color: #888;
+    color: black;
+  }
+  .active {
+    background-color: white;
+    color: black;
+  }
+  @media (max-width: 750px) {
     .tab-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      padding: 0;
-      z-index: 1000;
-      background-color: black;
-      color: white;
-      overflow: hidden;
+      justify-content: flex-start;
     }
     .btn {
-      font-size: 18px;
-      font-family: 'Lato', sans-serif;
-      background-color: black;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 0 5px;
-      cursor: pointer;
+      font-size: clamp(12px, 2vw, 16px);
+      padding: 5px 10px;
     }
-    @media (max-width: 750px) {
-      .btn {
-        padding: 5px 10px;
-        font-size: 16px;
-      }
-    }
-    .tab-bar button:hover {
-      background-color: #888;
-      color: black;
-    }
-    .active {
-      background-color: white;
-      color: black;
-    }
-  `;
+  }
+`;
 
   render() {
     return html`

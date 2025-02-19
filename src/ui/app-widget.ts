@@ -20,16 +20,44 @@ export class AppWidget extends LitElement {
       font-size: 14px;
       color: #333;
       border-top: 1px solid #ddd;
+      position: relative;
     }
 
     footer p {
       margin: 0;
       line-height: 1.6;
     }
+
+    .to-top-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.2s ease;
+    }
+
+    .to-top-btn:hover {
+      background-color: #555;
+    }
+
+    .to-top-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
   `
 
   @property({ type: String })
-  currentTabName: string = 'sponsor';
+  currentTabName: string = 'home';
 
   private tabTitles: Record<string, string> = {
     home:  'Главное',
@@ -55,7 +83,12 @@ export class AppWidget extends LitElement {
 
       <footer>
         <hr>
-        <p> Коворкинг мастерская "Дедок"<br>г.Уральск, ул.Айтиева, 24<br>тел.: +7 777 287 8182</p>
+        <p>Коворкинг мастерская "Дедок"<br>г.Уральск, ул.Айтиева, 24<br>тел.: +7 777 287 8182</p>
+        <button class="to-top-btn" @click="${() => window.scrollTo({ top: 0, behavior: 'smooth' })}">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+          </svg>
+        </button>
       </footer>
     `;
   }
