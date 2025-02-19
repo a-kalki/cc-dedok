@@ -102,34 +102,6 @@ const styles = css`
         border-radius: 4px;
         font-family: "Courier New", monospace;
     }
-
-    .copy-button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s;
-    }
-
-    .copy-button:active {
-      background-color: #e0e0e0;
-    }
-
-    .copy-button.green {
-      background-color: #4caf50;
-      color: white;
-    }
-
-    .copy-button.green:active {
-      background-color: #45a049;
-    }
-
-    .copy-button i {
-      font-size: 1.2em;
-    }
   `;
 
 @customElement('tab-content-widget')
@@ -144,7 +116,13 @@ export abstract class TabContentWidget extends LitElement {
   render() {
     return html`
       <div class="tab-content">
+        ${html`<image-slider-entity
+          .images=${this.imageSliderContents}
+          .currentSlideIndex=${0}
+        ></image-slider-entity>`}
+
         ${this.renderContent()}
+
         ${html`<image-slider-entity
           .images=${this.imageSliderContents}
           .currentSlideIndex=${0}

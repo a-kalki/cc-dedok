@@ -16,6 +16,7 @@ export class TabsBarWidget extends LitElement {
       top: 0;
       left: 0;
       width: 100%;
+      height: 40px;
       padding: 0;
       z-index: 1000;
       background-color: black;
@@ -31,6 +32,12 @@ export class TabsBarWidget extends LitElement {
       padding: 10px 20px;
       margin: 0 5px;
       cursor: pointer;
+    }
+    @media (max-width: 750px) {
+      .btn {
+        padding: 5px 10px;
+        font-size: 16px;
+      }
     }
     .tab-bar button:hover {
       background-color: #888;

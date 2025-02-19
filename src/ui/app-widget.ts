@@ -10,6 +10,7 @@ export class AppWidget extends LitElement {
       font-size: 18px;
       font-family: 'Lato', sans-serif;
       display: block;
+      padding-top: 32px;
     }
 
     footer {
