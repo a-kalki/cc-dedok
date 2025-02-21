@@ -10,7 +10,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "bun bld; bun run --watch ./src/server/main.ts",
-    "bld": "rm -rf dist/; bun build ./index.ts --outdir dist; cp ./index.html ./dist/; cp -r ./images ./dist/",
+"bld": "rm -rf dist/; HASH=$(date +%s); bun build ./ui-index.ts --outdir dist; mv dist/ui-index.js dist/ui-index-$HASH.js; sed \"s|{{HASH}}|$HASH|\" index.html > dist/index.html; cp -r ./images ./dist/",
     "lint": "bun eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "tslint": "bun tsc --noEmit"
   },
