@@ -53,27 +53,27 @@ export class HobbistTabContentWidget extends TabContentWidget {
 
   private stepThinksCardsContents: TermCardContent[] = [
     {
-      title: '1',
+      title: 'Мысль 1',
       body: 'Нужно купить сварочный аппарат<br>(или взять в аренду?)',
     },
     {
-      title: '2',
+      title: 'Мысль 2',
       body: 'Нужно докупить<br>(трубы, электроды, маска, магнитный зажим)',
     },
     {
-      title: '3',
+      title: 'Мысль 3',
       body: 'Нужно организовать рабочее место<br>(во дворе 9-этажки???)',
     },
     {
-      title: '4',
+      title: 'Мысль 4',
       body: 'А вдруг не получится?<br>(youtube наверное поможет)',
     },
     {
-      title: '5',
+      title: 'Мысль 5',
       body: 'Деньги, время, силы...<br><b>А стоит игра свеч?</b><br>(конечно не стоит!)',
     },
     {
-      title: '6',
+      title: 'Мысль 6',
       body: '<b>Но ведь охота!!!</b><br>(будь реалистом, ...)',
     },
   ]

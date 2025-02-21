@@ -30,42 +30,42 @@ export class MentorTabContentWidget extends TabContentWidget {
 
   private masterClassMotivationsCardsContents: TermCardContent[] = [
     {
-      title: '1',
+      title: 'Мотивация 1',
       body: 'попробовать что то новое',
     },
     {
-      title: '2',
+      title: 'Мотивация 2',
       body: 'интересно провести время, потусить',
     },
     {
-      title: '3',
+      title: 'Мотивация 3',
       body: 'узнать: "это мое или не мое!"',
     },
     {
-      title: '4',
+      title: 'Мотивация 4',
       body: 'сделать подарок своими руками',
     },
     {
-      title: '5',
+      title: 'Мотивация 5',
       body: 'научиться секретам работы с определенным инструментом;',
     },
   ]
 
   private courseMotivationsCardsContents: TermCardContent[] = [
     {
-      title: '1',
+      title: 'Мотивация 1',
       body: 'войти в ремесло (профессию)',
     },
     {
-      title: '2',
+      title: 'Мотивация 2',
       body: 'узнать секреты мастеров',
     },
     {
-      title: '3',
+      title: 'Мотивация 3',
       body: 'сделать классное и сложное изделие',
     },
     {
-      title: '4',
+      title: 'Мотивация 4',
       body: 'быть частью сообщества',
     },
   ]

@@ -27,7 +27,7 @@ export class TermCardEntity extends LitElement {
       color: white;
       text-align: center;
       padding: 16px;
-      font-size: 24px;
+      font-size: 18px;
     }
 
     .term-card-body {

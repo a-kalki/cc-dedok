@@ -64,19 +64,19 @@ export class HomeTabContentWidget extends TabContentWidget {
 
   private rulesCardsContents: TermCardContent[] = [
     {
-      title: '1',
+      title: 'Правило 1',
       body: 'будьте вежливы и уважительны ко всем',
     },
     {
-      title: '2',
+      title: 'Правило 2',
       body: 'по возможности, помогайте другим советом и делом',
     },
     {
-      title: '3',
+      title: 'Правило 3',
       body: 'будьте честны в отношениях',
     },
     {
-      title: '4',
+      title: 'Правило 4',
       body: 'относитесь к инструменту как к своей жене',
     }
   ]
@@ -148,6 +148,7 @@ export class HomeTabContentWidget extends TabContentWidget {
 
         ${html`<term-cards-widget
           .cards=${this.rulesCardsContents}
+          .columns=${4}
         </term-cards-widget>`}
 
         <p>Уверены, соблюдение этих несложных правил приведет к успеху и тебя и окружающих.</p>

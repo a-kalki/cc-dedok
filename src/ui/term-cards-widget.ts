@@ -7,7 +7,7 @@ export class TermCardsWidget extends LitElement {
   static styles = css`
     .term-cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(var(--columns, 3), 1fr);
       gap: 16px;
       width: 100%;
       grid-auto-rows: minmax(100px, auto);
@@ -28,6 +28,14 @@ export class TermCardsWidget extends LitElement {
 
   @property({ type: Boolean })
   isBlack: boolean = false;
+
+  @property({ type: Number })
+  columns: number = 3;
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.style.setProperty('--columns', String(this.columns));
+  }
 
   render() {
     return html`
