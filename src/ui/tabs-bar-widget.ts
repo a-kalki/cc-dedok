@@ -23,7 +23,6 @@ static styles = css`
     background-color: black;
     color: white;
     z-index: 1000;
-    padding: 0 5px;
     scrollbar-width: none;
   }
   .tab-bar::-webkit-scrollbar {
@@ -31,13 +30,13 @@ static styles = css`
   }
   .btn {
     flex-shrink: 0;
-    font-size: 18px;
     font-family: 'Lato', sans-serif;
+    font-size: 18px;
     background-color: black;
     color: white;
     border: none;
-    padding: 10px 15px;
-    margin: 0 2px;
+    padding: 0px 16px;
+    margin: 0;
     cursor: pointer;
     white-space: nowrap;
     transition: font-size 0.2s ease;
@@ -55,8 +54,8 @@ static styles = css`
       justify-content: flex-start;
     }
     .btn {
-      font-size: clamp(12px, 2vw, 16px);
-      padding: 5px 10px;
+      font-size: clamp(12px, 3vw, 16px);
+      padding: 0 8px;
     }
   }
 `;

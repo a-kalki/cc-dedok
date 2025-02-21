@@ -9,12 +9,12 @@ const styles = css`
 
     .content, .container, .tab-content {
       max-width: 100%;
-      padding: 0 8px;
       box-sizing: border-box;
     }
 
     .content {
       max-width: 980px;
+      padding: 0 8px;
       margin-left: auto;
       margin-right: auto;
       padding: 0 16px;
@@ -108,6 +108,31 @@ const styles = css`
         padding: 2px;
         border-radius: 4px;
         font-family: "Courier New", monospace;
+    }
+
+    a {
+      font-size: 16px;
+      border-radius: 4px;
+      color: #ccc;
+      background-color: #444;
+      text-decoration: underline;
+      padding: 4px;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+
+    a:hover,
+    a:focus {
+      color: #fff;
+      text-decoration: underline;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+
+    @media (hover: none) {
+      a:active {
+        color: #ddd;
+        text-decoration: underline;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
     }
   `;
 

@@ -81,14 +81,16 @@ export class ImageContentEntity extends LitElement {
   descriptionPosition: 'top' | 'bottom' = 'top';
 
   @state()
-  private isDescriptionVisible = false; // Состояние видимости описания
+  private isDescriptionVisible = false;
 
   private images: ImageContent[] = [];
   private observer!: IntersectionObserver;
   private intervalId: number | null = null;
 
-  protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
+  protected async firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>) {
     super.firstUpdated(_changedProperties);
+    this.currentSlideIndex = 0;
+    await this.preloadImages();
     this.setupObserver();
   }
 
@@ -108,12 +110,12 @@ export class ImageContentEntity extends LitElement {
     this.observer.observe(this);
   }
 
-  private startSlideshow() {
+  private async startSlideshow() {
     if (this.intervalId !== null) return;
     this.intervalId = window.setInterval(() => {
       this.updateSlideAndDescription();
     }, TIMING * 1000);
-    this.updateSlideAndDescription(); // Сразу обновить слайд и описание при старте
+    this.updateSlideAndDescription();
   }
 
   private stopSlideshow() {
@@ -123,11 +125,21 @@ export class ImageContentEntity extends LitElement {
     }
   }
 
+  private preloadImages(): Promise<void[]> {
+    const promises = this.images.map((image) => {
+      return new Promise<void>((resolve) => {
+        const img = new Image();
+        img.src = image.src;
+        img.onload = () => resolve();
+      });
+    });
+
+    return Promise.all(promises);
+  }
+
   private updateSlideAndDescription() {
-    // Переключение слайда
     this.currentSlideIndex = (this.currentSlideIndex + 1) % this.images.length;
 
-    // Управление видимостью описания
     this.isDescriptionVisible = true;
     setTimeout(() => {
       this.isDescriptionVisible = false;
@@ -137,7 +149,7 @@ export class ImageContentEntity extends LitElement {
   render() {
     const imageContent = this.images[this.currentSlideIndex];
     const descriptionStyle = `
-      opacity: ${this.isDescriptionVisible ? 1 : 0};
+      opacity: ${this.isDescriptionVisible && imageContent?.src ? 1 : 0};
       top: ${this.descriptionPosition === 'top' ? '16px' : 'auto'};
       bottom: ${this.descriptionPosition === 'bottom' ? '16px' : 'auto'};
     `;
