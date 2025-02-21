@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js';
 import type { ImageContent } from './types';
 
 const TIMING = 4; // Интервал переключения слайдов в секундах
-const VISIBILITY_TIMING = 50; // Интервал управления видимостью в миллисекундах
+const VISIBILITY_DURATION = 2; // Длительность видимости описания в секундах
 
 @customElement('image-slider-entity')
 export class ImageContentEntity extends LitElement {
@@ -27,7 +27,6 @@ export class ImageContentEntity extends LitElement {
 
     .description-container {
       position: absolute;
-      top: 16px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -78,13 +77,15 @@ export class ImageContentEntity extends LitElement {
   @property({ type: Number })
   private currentSlideIndex = 0;
 
+  @property({ type: String, reflect: true })
+  descriptionPosition: 'top' | 'bottom' = 'top';
+
   @state()
   private isDescriptionVisible = false; // Состояние видимости описания
 
   private images: ImageContent[] = [];
   private observer!: IntersectionObserver;
   private intervalId: number | null = null;
-  private visibilityIntervalId: number | null = null;
 
   protected firstUpdated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
     super.firstUpdated(_changedProperties);
@@ -97,10 +98,8 @@ export class ImageContentEntity extends LitElement {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
             this.startSlideshow();
-            this.startVisibilityControl();
           } else {
             this.stopSlideshow();
-            this.stopVisibilityControl();
           }
         });
       },
@@ -112,8 +111,9 @@ export class ImageContentEntity extends LitElement {
   private startSlideshow() {
     if (this.intervalId !== null) return;
     this.intervalId = window.setInterval(() => {
-      this.currentSlideIndex = (this.currentSlideIndex + 1) % this.images.length;
+      this.updateSlideAndDescription();
     }, TIMING * 1000);
+    this.updateSlideAndDescription(); // Сразу обновить слайд и описание при старте
   }
 
   private stopSlideshow() {
@@ -123,40 +123,28 @@ export class ImageContentEntity extends LitElement {
     }
   }
 
-  private startVisibilityControl() {
-    if (this.visibilityIntervalId !== null) return;
-    this.visibilityIntervalId = window.setInterval(() => {
-      this.updateDescriptionVisibility();
-    }, VISIBILITY_TIMING);
-  }
+  private updateSlideAndDescription() {
+    // Переключение слайда
+    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.images.length;
 
-  private stopVisibilityControl() {
-    if (this.visibilityIntervalId !== null) {
-      clearInterval(this.visibilityIntervalId);
-      this.visibilityIntervalId = null;
-    }
-  }
-
-  private updateDescriptionVisibility() {
-    const elapsedTime = (performance.now() / 1000) % TIMING; // Время в секундах
-    const visibilityPhase = elapsedTime / TIMING; // Фаза видимости от 0 до 1
-
-    // Логика видимости:
-    // - Видимо с 5% до 25% времени
-    // - Невидимо с 75% до 100% времени
-    if (visibilityPhase >= 0.05 && visibilityPhase <= 0.25) {
-      this.isDescriptionVisible = true;
-    } else if (visibilityPhase >= 0.75 || visibilityPhase <= 0.05) {
+    // Управление видимостью описания
+    this.isDescriptionVisible = true;
+    setTimeout(() => {
       this.isDescriptionVisible = false;
-    }
+    }, VISIBILITY_DURATION * 1000);
   }
 
   render() {
     const imageContent = this.images[this.currentSlideIndex];
+    const descriptionStyle = `
+      opacity: ${this.isDescriptionVisible ? 1 : 0};
+      top: ${this.descriptionPosition === 'top' ? '16px' : 'auto'};
+      bottom: ${this.descriptionPosition === 'bottom' ? '16px' : 'auto'};
+    `;
     return html`
       <div class="slides">
         <img class="full-screen-image" src="${imageContent?.src}" />
-        <div class="description-container" style="opacity: ${this.isDescriptionVisible ? 1 : 0}">
+        <div class="description-container" style="${descriptionStyle}">
           <div class="description">
             ${imageContent?.description}
           </div>

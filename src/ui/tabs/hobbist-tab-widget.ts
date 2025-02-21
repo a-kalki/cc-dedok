@@ -180,7 +180,7 @@ export class HobbistTabContentWidget extends TabContentWidget {
       </div>
 
       <div class="black">
-      <div class="content padding-64">
+      <div class="content container padding-64">
         <h1>ПОЧЕМ НЫНЧЕ СЧАСТЬЕ???</h1>
 
         <h3>А сколько счастья вам отсыпать?</h3>
@@ -194,7 +194,7 @@ export class HobbistTabContentWidget extends TabContentWidget {
 
 
 
-      <div class="content padding-64">
+      <div class="content container padding-64">
         <h1>ЧТО ВХОДИТ В СЧАСТЬЕ?</h1>
 
         <h3>За эту плату вы получите!</h3>
@@ -258,7 +258,7 @@ export class HobbistTabContentWidget extends TabContentWidget {
 
 
       <div class="black">
-      <div class="content padding-64">
+      <div class="content container padding-64">
         <h1>ПЛЮШКИ ДЛЯ БОЛЬШЕГО СЧАСТЬЯ</h1>
 
         <p>Жизненная ситуация: нужно провести электропроводку на балкон, для этого хорошо бы иметь соответствующие этой работе инструменты (индикатор, стриппер, кримпер, бокорез...). Знакомо?<br>

@@ -125,7 +125,7 @@ export class HomeTabContentWidget extends TabContentWidget {
 
       <!-- start of working options -->
       <div class="black">
-        <div class="content padding-64">
+        <div class="content container padding-64">
           <h1>ВАРИАНТЫ СОТРУДНИЧЕСТВА</h1>
 
           <p>Наша коворкинг-мастерская это пространство возможностей и здесь любой человек может проявлять себя в одной из следующих (или нескольких) ролей.</p>
@@ -141,7 +141,7 @@ export class HomeTabContentWidget extends TabContentWidget {
       </div>
 
       <!-- start of our rules -->
-      <div class="content padding-64">
+      <div class="content container padding-64">
         <h1>НАШИ ПРАВИЛА</h1>
 
         <p>Чтобы сотрудничество и взаимодействие всех участников процессов было легким и радостным давайте соблюдать установленные нами правила.</p>
@@ -156,7 +156,7 @@ export class HomeTabContentWidget extends TabContentWidget {
 
       <!-- start of conclusion -->
       <div class="black">
-        <div class="content padding-64">
+        <div class="content container padding-64">
           <h1>В ЗАКЛЮЧЕНИЕ</h1>
 
           <p>Мы, коллектив коворкинг мастерской относимся к вам с доверием и заботой. Ожидаем от вас того же. Давайте преумножать ее в наших отношениях.</p>

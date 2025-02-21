@@ -7,10 +7,17 @@ const styles = css`
       display: block;
     }
 
+    .content, .container, .tab-content {
+      max-width: 100%;
+      padding: 0 8px;
+      box-sizing: border-box;
+    }
+
     .content {
       max-width: 980px;
       margin-left: auto;
       margin-right: auto;
+      padding: 0 16px;
     }
 
     .black {
@@ -48,7 +55,7 @@ const styles = css`
     }
 
     h1 {
-      font-size: 36px;
+      font-size: 28px;
       font-family: 'Segoe UI', Arial, sans-serif;
       font-weight: 400;
       margin: 10px 0;
@@ -57,7 +64,7 @@ const styles = css`
     }
 
     p {
-      font-size: 18px;
+      font-size: 16px;
       mapgin: 18px 0;
       line-height: 1.5;
     }
@@ -126,6 +133,7 @@ export abstract class TabContentWidget extends LitElement {
         ${html`<image-slider-entity
           .images=${this.imageSliderContents}
           .currentSlideIndex=${0}
+          .descriptionPosition=${'bottom'}
         ></image-slider-entity>`}
       </div>
     `;

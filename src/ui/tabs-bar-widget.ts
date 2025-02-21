@@ -16,6 +16,7 @@ static styles = css`
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100%;
     height: 40px;
     display: flex;
     overflow-x: auto;
@@ -23,8 +24,13 @@ static styles = css`
     color: white;
     z-index: 1000;
     padding: 0 5px;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar {
+    display: none;
   }
   .btn {
+    flex-shrink: 0;
     font-size: 18px;
     font-family: 'Lato', sans-serif;
     background-color: black;
