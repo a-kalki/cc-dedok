@@ -18,6 +18,7 @@ const styles = css`
       margin-left: auto;
       margin-right: auto;
       padding: 0 16px;
+      font-size: 16px;
     }
 
     .black {
@@ -64,7 +65,6 @@ const styles = css`
     }
 
     p {
-      font-size: 16px;
       mapgin: 18px 0;
       line-height: 1.5;
     }
