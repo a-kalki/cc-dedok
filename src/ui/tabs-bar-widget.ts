@@ -20,7 +20,7 @@ export class TabsBarWidget extends LitElement {
       height: 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Распределение пространства между элементами */
+      justify-content: space-between;
       background-color: black;
       color: white;
       z-index: 1000;
@@ -62,13 +62,18 @@ export class TabsBarWidget extends LitElement {
       background-color: white;
       color: black;
     }
-    @media (max-width: 750px) {
+    @media (max-width: 768px) {
       .tab-bar {
-        justify-content: flex-start;
+        justify-content: space-between;
       }
       .btn {
-        font-size: clamp(12px, 3vw, 16px);
+        font-size: clamp(12px, 2.5vw, 16px);
         padding: 0 8px;
+      }
+    }
+    @media (max-width: 500px) {
+      .logo {
+        content: url('images/logo_short.svg');
       }
     }
   `;
