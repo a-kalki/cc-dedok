@@ -67,7 +67,7 @@ export class TabsBarWidget extends LitElement {
         justify-content: space-between;
       }
       .btn {
-        font-size: clamp(12px, 2.5vw, 16px);
+        font-size: clamp(10px, 2.5vw, 16px);
         padding: 0 8px;
       }
     }

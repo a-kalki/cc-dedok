@@ -15,17 +15,29 @@ export class AppWidget extends LitElement {
 
     footer {
       background-color: #f5f5f5;
-      padding-top: 8px;
-      text-align: center;
+      padding: 20px;
       font-size: 14px;
       color: #333;
       border-top: 1px solid #ddd;
       position: relative;
+      display: grid;
+      grid-template-columns: auto auto; /* Две колонки: текст и логотип */
+      justify-content: center; /* Центрируем содержимое */
+      gap: 20px; /* Отступ между текстом и логотипом */
+      max-width: 1200px; /* Ограничиваем ширину футера */
+      margin: 0 auto; /* Центрируем футер */
+      padding-right: 60px; /* Отступ справа для кнопки "наверх" */
     }
 
     footer p {
       margin: 0;
       line-height: 1.6;
+      text-align: left; /* Текст выравниваем по левому краю */
+    }
+
+    .logo {
+      width: 175px; /* Ширина логотипа */
+      height: auto; /* Автоматическая высота для сохранения пропорций */
     }
 
     .to-top-btn {
@@ -54,7 +66,7 @@ export class AppWidget extends LitElement {
       height: 24px;
       fill: white;
     }
-  `
+  `;
 
   @property({ type: String })
   currentTabName: string = 'home';
@@ -81,15 +93,15 @@ export class AppWidget extends LitElement {
 
       ${this.getTabComponent(this.currentTabName)}
 
-      <footer>
-        <hr>
-        <p>Коворкинг мастерская "Дедок"<br>г.Уральск, ул.Айтиева, 24<br>тел.: +7 777 287 8182</p>
-        <button class="to-top-btn" @click="${() => window.scrollTo({ top: 0, behavior: 'smooth' })}">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 4l-8 8h5v8h6v-8h5z"/>
-          </svg>
-        </button>
-      </footer>
+    <footer>
+      <p>Коворкинг-мастерская<br>г.Уральск, ул.Айтиева, 24<br>тел.: +7 777 287 8182</p>
+      <img class="logo" src="images/logo_full.svg" alt="Логотип">
+      <button class="to-top-btn" @click="${() => window.scrollTo({ top: 0, behavior: 'smooth' })}">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+        </svg>
+      </button>
+    </footer>
     `;
   }
 
