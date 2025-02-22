@@ -21,23 +21,33 @@ export class AppWidget extends LitElement {
       border-top: 1px solid #ddd;
       position: relative;
       display: grid;
-      grid-template-columns: auto auto; /* Две колонки: текст и логотип */
-      justify-content: center; /* Центрируем содержимое */
-      gap: 20px; /* Отступ между текстом и логотипом */
-      max-width: 1200px; /* Ограничиваем ширину футера */
-      margin: 0 auto; /* Центрируем футер */
-      padding-right: 60px; /* Отступ справа для кнопки "наверх" */
+      grid-template-columns: auto auto;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-right: 60px;
     }
 
     footer p {
       margin: 0;
       line-height: 1.6;
-      text-align: left; /* Текст выравниваем по левому краю */
+      text-align: left;
     }
 
     .logo {
-      width: 175px; /* Ширина логотипа */
-      height: auto; /* Автоматическая высота для сохранения пропорций */
+      width: 175px;
+      height: auto;
+    }
+
+    @media (max-width: 470px) {
+      .logo {
+        width: clamp(100px, 30vw, 175px);
+      }
+      footer {
+        font-size: clamp(12px, 2.5vw, 14px)
+      }
     }
 
     .to-top-btn {
