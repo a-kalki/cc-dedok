@@ -117,18 +117,14 @@ export class PartnerTabContentWidget extends TabContentWidget {
 
   private presentationsCardsContents: TermCardContent[] = [
     {
-      title: 'планируется',
-      body: 'Видеопрезентация:<br>"Бизнес идея"',
-      isPulsed: false,
+      title: '<a href="https://youtu.be/SSnysMMS2AU" target="_blank"><img src="images/icons8-youtube-50.png" style="height: 48px"></a>',
+
+      body: 'Видеопрезентация:<br>"Видение - Бизнес идея"',
+      isPulsed: true,
     },
     {
       title: 'планируется',
-      body: 'Видеопрезентация:<br>"Бизнес модель"',
-      isPulsed: false,
-    },
-    {
-      title: 'планируется',
-      body: 'Видеопрезентация:<br>"Шаг за шагом"',
+      body: 'Видеопрезентация:<br>"Видение - Бизнес модель"<br>"Шаг за шагом"',
       isPulsed: false,
     },
     {
