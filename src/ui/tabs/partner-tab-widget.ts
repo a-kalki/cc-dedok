@@ -118,28 +118,22 @@ export class PartnerTabContentWidget extends TabContentWidget {
   private presentationsCardsContents: TermCardContent[] = [
     {
       title: '<a href="https://youtu.be/SSnysMMS2AU" target="_blank"><img src="images/icons8-youtube-50.png" style="height: 48px"></a>',
-
       body: 'Видеопрезентация:<br>"Видение - Бизнес идея"',
       isPulsed: true,
     },
     {
-      title: 'планируется',
+      title: '<a href="https://youtu.be/YYIc19oz1g0" target="_blank"><img src="images/icons8-youtube-50.png" style="height: 48px"></a>',
       body: 'Видеопрезентация:<br>"Видение - Бизнес модель"<br>"Шаг за шагом"',
       isPulsed: false,
     },
     {
       title: 'планируется',
-      body: 'Видеопрезентация:<br>"Предложение для Мастеров"',
+      body: 'Видеоотчет:<br>"Первые шаги"',
       isPulsed: false,
     },
     {
       title: 'планируется',
-      body: 'Видеопрезентация:<br>"Предложение для Государства"',
-      isPulsed: false,
-    },
-    {
-      title: 'планируется',
-      body: 'Видеоотчет:<br>"Первые шаги..."',
+      body: 'Видеоотчет:<br>"Открываю коворкинг мастерскую"',
       isPulsed: false,
     },
   ]
