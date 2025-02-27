@@ -167,9 +167,10 @@ export class PartnerTabContentWidget extends TabContentWidget {
         <p>Если ты внимательно изучил предыдущие вкладки, то у тебя есть представление:</p>
 
         ${html`<term-cards-widget
-          .cards=${this.bussinessParamsCardsContents}>
+          .cards=${this.bussinessParamsCardsContents}
           .isBlack=${true}
-        </term-cards-widget>`}
+          .columns=${4}
+        ></term-cards-widget>`}
 
         <p>У тебя есть возможность стать частью команды данного бизнеса и более того, возможность, чтобы часть бизнеса стала твоим. Данная страница расскажет тебе как бизнес будет организован изнутри.</p>
 
@@ -183,8 +184,8 @@ export class PartnerTabContentWidget extends TabContentWidget {
         <h3>Основополагающие принципы и правила</h3>
 
         ${html`<term-cards-widget
-          .cards=${this.parneringPrincipiesCardsContents}>
-        </term-cards-widget>`}
+          .cards=${this.parneringPrincipiesCardsContents}
+        ></term-cards-widget>`}
 
         <p>Я сторонник <b>системного менеджмента</b> и <b>agile</b> подхода и буду стремиться построить компанию с <b>зеленой корпоративной культурой</b>. В то же время, признаю сильные стороны других культур и буду аккуратно использовать их в своей работе. Следующие правила должны помочь мне и команде в этом:</p>
 
@@ -234,8 +235,9 @@ export class PartnerTabContentWidget extends TabContentWidget {
         <h3>Итерационное развитие через цели</h3>
 
         ${html`<term-cards-widget
-          .cards=${this.howItWorksCardsContents}>
-        </term-cards-widget>`}
+          .cards=${this.howItWorksCardsContents}
+          .columns=${4}
+        ></term-cards-widget>`}
 
         <h3>Выстраивание работы в команде:</h3>
         <ol>
@@ -285,8 +287,20 @@ export class PartnerTabContentWidget extends TabContentWidget {
 
         <p>Допустим в команде уже два столяра, два менеджера, один smm-щик. По результатам <s>собрания</s> мозгового штурма мы пришли к такому плану:</p>
         <ol>
-          <li><u>раскрутка коворкинг услуг "Хоббист", "Мастер", "Ментор" среди жителей:</u></li>
+          <li><u>открытие коворкинг мастерской:</u></li>
           <ol>
+            <li>столярам нужно сделать</li>
+            <ul>
+              <li>организовать хранение и доступ для ручного и электроинструмента;</li>
+              <li>организовать системы пылеудаления и аспирации;</li>
+              <li>2-4 верстака для рабочего пространства;</li>
+              <li>сделать стелаж для хранения длинного пиломатериала;</li>
+              <li>сделать стелаж для хранения листового пиломатериала;</li>
+            </ul>
+            <li>объявить об открытии коворкинг-мастерской и начать прием Хоббистов, Мастеров, Менторов;</li>
+          </ol>
+          <li><u>раскрутка коворкинг услуг "Хоббист", "Мастер", "Ментор" среди жителей:</u></li>
+          <ul>
             <li>smm-щик ежедневно снимает сторис в instagram над текущими работами столяров, хоббистов, мастеров;</li>
             <li>smm-щик два раза в неделю делает краткие видеоинтервью раскрывающие процесс работы;</li>
             <li>smm-щик два раза в неделю делает reels;</li>
@@ -296,16 +310,16 @@ export class PartnerTabContentWidget extends TabContentWidget {
             <li>менеджеры организовывают бесперебойную работу сервиса для Хоббистов, Мастеров и Менторов;</li>
             <li>столяры обеспечивают поддержку "столяр-инструктор" для Хоббистов;</li>
             <li>столяры обеспечивают помощь в работе Мастеров и Менторов;</li>
-          </ol>
+          </ul>
           <li><u>пробы рынка "Сотрудничество с дизайнерами";</u></li>
           <ol>
             <li>столяры готовят два образца изделий применяющихся в интерьерах;</li>
             <li>менеджеры через показ образцов предлагают сотрудничество дизайнерам;</li>
             <li>в случае успеха:</li>
-            <ol>
+            <ul>
               <li>делаем своими ресурсами;</li>
               <li>ищем Мастеров для предложения "заказа";</li>
-            </ol>
+            </ul>
           </ol>
           <li><u>пробы рынка "Маркетплейс" и сервиса "Мастер"</u></li>
           <ol>
@@ -314,13 +328,6 @@ export class PartnerTabContentWidget extends TabContentWidget {
             <li>мастер(а) и столяры определяют две модели кухонных досок:</li>
             <li>мастер(а) готовит изделия по 10 шт каждого образца.</li>
             <li>менеджеры организуют продажи в маркетплейсе;</li>
-          </ol>
-          <li><u>развитие мастерской, столярам нужно сделать:</u></li>
-          <ol>
-            <li>организация рабочего пространства;</li>
-            <li>стелаж для хранения длинного пиломатериала;</li>
-            <li>стеалаж для хранения листового пиломатериала;</li>
-            <li>2 верстака для рабочего пространства "Хоббист";</li>
           </ol>
         </ol>
 
@@ -341,8 +348,9 @@ export class PartnerTabContentWidget extends TabContentWidget {
         <p>Внутренняя организация бизнеса устроена довольно нестандартно. Почему так?</p>
 
         ${html`<term-cards-widget
-          .cards=${this.whyComplexCardsContents}>
-        </term-cards-widget>`}
+          .cards=${this.whyComplexCardsContents}
+          .columns=${4}
+        ></term-cards-widget>`}
       </div>
       </div>
 
@@ -368,9 +376,9 @@ export class PartnerTabContentWidget extends TabContentWidget {
 
         <p><s>Вся тусовка</s> Вся идея жизнеспособна лишь в одном случае: "Если предложение коворкинг мастерской актуально для жителей". На мой взгляд есть все причины почему предложение будет актуальным. Весь бизнес выстроен на классическом росте личности в течении жизни:</p>
         ${html`<term-cards-widget
-          .cards=${this.professionStepsCardsContents}>
+          .cards=${this.professionStepsCardsContents}
           .isBlack=${true}
-        </term-cards-widget>`}
+        ></term-cards-widget>`}
 
         <p>Если бизнес помогает в этом непростом вопросе людям, то его естественным результатом является успех.</p>
 
@@ -388,8 +396,8 @@ export class PartnerTabContentWidget extends TabContentWidget {
         <p>Ниже по ссылкам ты найдешь видеопрезентации видения и пройденного пути. Ты волен изучать выборочно и в произвольном порядке, но все же презентации приведены в порядке эволюционного развития от идеи до действий.</p>
 
         ${html`<term-cards-widget
-          .cards=${this.presentationsCardsContents}>
-        </term-cards-widget>`}
+          .cards=${this.presentationsCardsContents}
+        ></term-cards-widget>`}
 
         <p style="font-size: 14px"><u>Примечание:</u> Данные видеопрезентации будут выкладываться в ближайшем будущем по мере готовности. Если ты читаешь эти строки, то значит мы еще выложили не все видео.<br>
         Хочешь быть в курсе их выпуска? Подписывайся на youtube канал или вступай в telegram сообщество.</p>
@@ -414,8 +422,8 @@ export class PartnerTabContentWidget extends TabContentWidget {
         <p>Поэтому мое предложение выглядит так:<br><b>Хочешь построить этот бизнес? Welcome. Думаю, здесь ты пройдешь хорошую школу бизнеса.</b></p>
 
         ${html`<term-cards-widget
-          .cards=${this.skillsImportantCardsContents}>
-        </term-cards-widget>`}
+          .cards=${this.skillsImportantCardsContents}
+        ></term-cards-widget>`}
 
         <p>Сейчас, момент становления команды и лучшее время влиться:</p>
         <ul>

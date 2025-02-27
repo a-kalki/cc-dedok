@@ -100,7 +100,7 @@ export class MentorTabContentWidget extends TabContentWidget {
         ${html`<term-cards-widget
           .cards=${this.masterClassMotivationsCardsContents}
           .isBlack=${true}
-        </term-cards-widget>`}
+        ></term-cards-widget>`}
 
         <p><b>Курс</b> - это последовательность уроков для реализациии среднего или крупного проекта. В ходе него Ментор "ведет" студентов и помогает пройти все сложности проекта.
 
@@ -112,7 +112,8 @@ export class MentorTabContentWidget extends TabContentWidget {
         ${html`<term-cards-widget
           .cards=${this.courseMotivationsCardsContents}
           .isBlack=${true}
-        </term-cards-widget>`}
+          .columns=${4}
+        ></term-cards-widget>`}
       </div>
 
       <div class="black">
