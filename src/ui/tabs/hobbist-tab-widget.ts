@@ -47,7 +47,7 @@ export class HobbistTabContentWidget extends TabContentWidget {
     },
     {
       title: '5. Выбор',
-      body: 'Продолжаю, или ищу другое.',
+      body: 'Продолжаю?',
     },
   ]
 
@@ -66,7 +66,7 @@ export class HobbistTabContentWidget extends TabContentWidget {
     },
     {
       title: 'Мысль 4',
-      body: 'А вдруг не получится?<br>(youtube наверное поможет)',
+      body: 'А вдруг не будет получаться?<br>(youtube наверное поможет)',
     },
     {
       title: 'Мысль 5',
@@ -74,7 +74,7 @@ export class HobbistTabContentWidget extends TabContentWidget {
     },
     {
       title: 'Мысль 6',
-      body: '<b>Но ведь охота!!!</b><br>(будь реалистом, ...)',
+      body: '<b>Но ведь охота!!!</b><br>(будь реалистом, не гоняйся за желаниями)',
     },
   ]
 
@@ -147,7 +147,7 @@ export class HobbistTabContentWidget extends TabContentWidget {
 
         <p><b>Наверняка тебе это знакомо!</b> Именно для решения всех этих проблем существуем мы.</p>
 
-        <p><u>Наша цель:</u> собрать и организовать все необходимое, чтобы помочь тебе найти <b>свое</b> занятие (или наоборот узнать: "<b>это</b> точно не <b>мое</b>").</p>
+        <p><u>Наша цель:</u> собрать и организовать все необходимое, чтобы помочь тебе найти <b>свое</b> занятие (или наоборот узнать: "<b>это точно не мое</b>").</p>
 
         <blockquote>Узнать что не мое, так же важно как и узнать что мое</blockquote>
 
